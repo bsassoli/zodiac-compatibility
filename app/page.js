@@ -30,6 +30,7 @@ export default function Home() {
 
       const data = await response.json();
       console.log('API Response:', data); // Debug log
+      console.log('MSG Response:', data.content[0].text); // Debug log
       
       if (data.error) {
         throw new Error(data.error);
