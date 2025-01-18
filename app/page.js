@@ -36,9 +36,9 @@ export default function Home() {
       }
       
       // Claude API returns response in messages[0].content
-      console.log('API Response:', data.messages[0]); // Debug log
-      if (data.messages && data.messages[0] && data.messages[0].content) {
-        setCompatibility(data.messages[0].content);
+      
+      if (data.content[0] && data.content[0].text) {
+        setCompatibility(data.content[0].text);
       } else {
         throw new Error('Risposta API non valida');
       }
