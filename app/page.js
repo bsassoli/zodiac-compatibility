@@ -35,11 +35,14 @@ export default function Home() {
         throw new Error(data.error);
       }
       
-      if (data.content && data.content[0] && data.content[0].text) {
-        setCompatibility(data.content[0].text);
+      // Claude API returns response in messages[0].content
+      if (data.messages && data.messages[0] && data.messages[0].content) {
+        setCompatibility(data.messages[0].content);
       } else {
         throw new Error('Risposta API non valida');
+      }
     } catch (error) {
+      console.error('Error:', error);
       setCompatibility('Si è verificato un errore. Riprova più tardi.');
     } finally {
       setLoading(false);
