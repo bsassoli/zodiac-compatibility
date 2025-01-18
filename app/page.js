@@ -36,7 +36,7 @@ export default function Home() {
       }
       
       // Claude API returns response in messages[0].content
-      
+      console.log('MSG Response:', data.content[0].text); // Debug log
       if (data.content[0] && data.content[0].text) {
         setCompatibility(data.content[0].text);
       } else {
