@@ -16,6 +16,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const getCompatibility = async () => {
+    console.log('Signs:', sign1, sign2); // Debug log
     if (!sign1 || !sign2) return;
     
     setLoading(true);
