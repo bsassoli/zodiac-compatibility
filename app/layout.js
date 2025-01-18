@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Compatibilità Astrologica',
+  title: 'Compatibilità Zodiacale',
   description: 'Scopri la compatibilità tra i segni zodiacali',
 };
 

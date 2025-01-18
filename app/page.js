@@ -29,7 +29,16 @@ export default function Home() {
       });
 
       const data = await response.json();
-      setCompatibility(data.content[0].text);
+      console.log('API Response:', data); // Debug log
+      
+      if (data.error) {
+        throw new Error(data.error);
+      }
+      
+      if (data.content && data.content[0] && data.content[0].text) {
+        setCompatibility(data.content[0].text);
+      } else {
+        throw new Error('Risposta API non valida');
     } catch (error) {
       setCompatibility('Si è verificato un errore. Riprova più tardi.');
     } finally {
